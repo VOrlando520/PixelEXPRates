@@ -19,16 +19,16 @@ public class RatesCommand implements CommandExecutor {
     @Override
     public CommandResult execute(CommandSource src, CommandContext args) throws CommandException {
         if (!(src instanceof Player)) {
-            src.sendMessage(Text.of("Somente players podem usar este comando"));
+            src.sendMessage(Text.of("Only players can use this command"));
             return CommandResult.empty();
         }
 
-        src.sendMessage(Text.builder("Ganho de EXP pelo nivel de seu Pokémon:").color(TextColors.GREEN).build());
+        src.sendMessage(Text.builder("EXP gain by your Pokémon's level:").color(TextColors.GREEN).build());
         plugin.getRates().stream().forEach(s ->
                 src.sendMessage(
-                        Text.builder(" Nivel "+s.getMinLevel()+" a "+s.getMaxLevel()).color(TextColors.GRAY)
+                        Text.builder(" Level "+s.getMinLevel()+" a "+s.getMaxLevel()).color(TextColors.GRAY)
                                 .append(Text.builder(": ").color(TextColors.DARK_GRAY).build())
-                                .append(Text.builder(String.format("%.1f", s.getExpMultiplier())+"x EXP em batalhas").color(TextColors.GOLD).build())
+                                .append(Text.builder(String.format("%.1f", s.getExpMultiplier())+"x EXP in battle").color(TextColors.GOLD).build())
                                 .build()
                 )
         );
@@ -46,9 +46,9 @@ public class RatesCommand implements CommandExecutor {
             try {
                 plugin.reloadConfig();
             } catch (Exception e) {
-            	throw new CommandException(Text.of("Falha ao recarregar config"), e);
+            	throw new CommandException(Text.of("Failed to reload config"), e);
             }
-            src.sendMessage(Text.builder("Configurações recarregadas!").color(TextColors.GREEN).build());
+            src.sendMessage(Text.builder("Settings reloaded!").color(TextColors.GREEN).build());
             return CommandResult.success();
 		}
     	
