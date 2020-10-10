@@ -58,18 +58,18 @@ public class PixelEXPRates
         try {
             this.reloadConfig();
         } catch (Exception e) {
-            throw new RuntimeException("Falha ao carregar config", e);
+            throw new RuntimeException("Failed to load config", e);
         }
         
         CommandSpec subReload = CommandSpec.builder()
             .executor(injector.getInstance(ReloadSubcommand.class))
         	.permission("pixelexprates.reload")
-        	.description(Text.of("Recarregar configurações"))
+        	.description(Text.of("Reload settings"))
         	.build();
         
         CommandSpec cmdRates = CommandSpec.builder()
         	.executor(injector.getInstance(RatesCommand.class))
-	        .description(Text.of("Comando principal"))
+	        .description(Text.of("Main Command"))
 	        // "reload" is a child of this command
 	        .child(subReload, "reload")
 	        .build();
