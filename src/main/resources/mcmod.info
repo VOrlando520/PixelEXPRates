@@ -2,13 +2,13 @@
 {
   "modid": "pixelexprates",
   "name": "Pixelmon EXP Rates",
-  "description": "Feito por Arzio. Ideia original.",
+  "description": "Made by Arzio. Updated & translated by Vince.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["Arzio"],
-  "credits": "uwu",
+  "authorList": ["Arzio, Vince"],
+  "credits": "Pixelmon Reforged, Arzio and PokeOdyssey.com",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
